@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "build-dict": "ts-node build-dict.ts",
     "test": "ng test"
   },
   "private": true,
@@ -34,6 +35,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "ts-node": "^10.4.0",
     "typescript": "~4.2.3"
   }
 }
