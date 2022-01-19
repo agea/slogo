@@ -1,1 +1,38 @@
-{{title}}
+<div class="flex justify-content-center">
+  <h1>slogo</h1>
+</div>
+
+{{word}}
+
+<div fxLayout="column" fxLayoutGap="10px">
+  <div class="word-row" fxLayout="row" fxLayoutGap="10px"
+    *ngFor="let row of matrix; index as i; first as firstRow; last as lastRow;">
+    <mat-card *ngFor="let col of row; index as j; first as firstCol; last as lastCol;">
+      {{matrix[i][j].value || ' '}}
+    </mat-card>
+  </div>
+</div>
+
+<div class="keyboard">
+  <div fxLayout="row">
+    <button fxFlex color="primary" fxFlex="1 0 20px" mat-raised-button *ngFor="let k of keyboard[0]"
+      (click)="letter(k)">{{k}}</button>
+  </div>
+  <div fxLayout="row">
+    <div fxFlex="1 0 20px"></div>
+    <button fxFlex color="accent" fxFlex="1 0 20px" mat-raised-button *ngFor="let k of keyboard[1]"
+      (click)="letter(k)">{{k}}</button>
+    <div fxFlex="1 0 20px"></div>
+  </div>
+  <div fxLayout="row">
+    <button fxFlex="1 0 30px" mat-raised-button>
+      <mat-icon>keyboard_return</mat-icon>
+    </button>
+    <button fxFlex color="warn" fxFlex="1 0 20px" mat-raised-button *ngFor="let k of keyboard[2]"
+      (click)="letter(k)">{{k}}</button>
+    <button fxFlex fxFlex="1 0 30px" mat-raised-button (click)="backspace()">
+      <mat-icon>backspace</mat-icon>
+    </button>
+  </div>
+
+</div>

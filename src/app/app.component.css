@@ -1,0 +1,35 @@
+input {
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: .5em;
+  padding-left: .8em;
+  padding-top: 0;
+}
+
+h1 {
+  padding-top: 1em;
+}
+
+mat-form-field {
+  width: 67.5px;
+}
+
+
+
+.keyboard {
+  max-width: 600px;
+}
+
+.keyboard button {
+  margin: 4px 2px;
+  text-transform: uppercase;
+  min-width: 0;
+  padding: 0 !important;
+}
+
+.word-row mat-card {
+  height: 18px;
+  width: 18px;
+  text-align: center;
+  text-transform: uppercase;
+}
