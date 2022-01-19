@@ -7,13 +7,15 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  dict: 'small' | 'standard' | 'extended' = 'small';
+  dict: 'standard' | 'extended' = 'standard';
   length = 5;
   height = 6;
   words: string[] = [];
   word?: string;
 
-  matrix: { value: string }[][] = [];
+  matrix: { value: string, color?: string }[][] = [];
+
+  colors: { [k: string]: string } = {};
 
   keyboard = [
     ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
@@ -35,8 +37,28 @@ export class AppComponent implements OnInit {
       for (let col of row) {
         if (!col.value) {
           col.value = k;
+          if (row.indexOf(col) === this.length - 1) {
+            this.checkWord(row);
+          }
           return;
         }
+      }
+    }
+  }
+
+  private checkWord(row: { value: string, color?: string }[]) {
+    for (let j = 0; j < row.length; j++) {
+      const col = row[j];
+      const idx = this.word?.indexOf(col.value);
+      if (idx == -1) {
+        this.colors[col.value] = 'warn';
+        col.color = 'warn';
+      } else if (idx !== j) {
+        this.colors[col.value] = 'accent';
+        col.color = 'accent';
+      } else {
+        this.colors[col.value] = 'primary';
+        col.color = 'primary';
       }
     }
   }
@@ -45,8 +67,11 @@ export class AppComponent implements OnInit {
     for (let i = this.matrix.length - 1; i >= 0; i--) {
       for (let j = this.matrix[i].length - 1; j >= 0; j--) {
         if (this.matrix[i][j].value) {
+          if (j === this.matrix[i].length - 1) {
+            return;
+          }
           this.matrix[i][j].value = '';
-          return
+          return;
         }
       }
     }

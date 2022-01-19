@@ -7,17 +7,16 @@ input {
 }
 
 h1 {
-  padding-top: 1em;
+  padding-top: .5em;
 }
 
 mat-form-field {
   width: 67.5px;
 }
 
-
-
 .keyboard {
   max-width: 600px;
+  margin: auto;
 }
 
 .keyboard button {
@@ -27,9 +26,28 @@ mat-form-field {
   padding: 0 !important;
 }
 
-.word-row mat-card {
-  height: 18px;
-  width: 18px;
+.word-row td {
+  height: 32px;
+  width: 32px;
+  min-width: 32px;
   text-align: center;
   text-transform: uppercase;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  border-radius: 3px;
+}
+
+.matrix {
+  margin: auto;
+  border-spacing: 4px;
+}
+
+.matrix-wrapper {
+  height: calc(100% - 192px);
+  width: 100%;
+  overflow: auto;
+}
+
+.keyboard-wrapper {
+  width: 100%;
 }

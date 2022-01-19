@@ -1,38 +1,38 @@
-<div class="flex justify-content-center">
+<div class="title" fxLayout="column" fxLayoutAlign="start center">
   <h1>slogo</h1>
 </div>
 
-{{word}}
-
-<div fxLayout="column" fxLayoutGap="10px">
-  <div class="word-row" fxLayout="row" fxLayoutGap="10px"
-    *ngFor="let row of matrix; index as i; first as firstRow; last as lastRow;">
-    <mat-card *ngFor="let col of row; index as j; first as firstCol; last as lastCol;">
-      {{matrix[i][j].value || ' '}}
-    </mat-card>
-  </div>
+<div class="matrix-wrapper">
+  <table class="matrix">
+    <tr class="word-row" *ngFor="let row of matrix; index as i; first as firstRow; last as lastRow;">
+      <td *ngFor="let col of row; index as j; first as firstCol; last as lastCol;"
+        [ngClass]="matrix[i][j].color!+'-bg'">
+        {{matrix[i][j].value || ' '}}
+      </td>
+    </tr>
+  </table>
 </div>
 
-<div class="keyboard">
-  <div fxLayout="row">
-    <button fxFlex color="primary" fxFlex="1 0 20px" mat-raised-button *ngFor="let k of keyboard[0]"
-      (click)="letter(k)">{{k}}</button>
-  </div>
-  <div fxLayout="row">
-    <div fxFlex="1 0 20px"></div>
-    <button fxFlex color="accent" fxFlex="1 0 20px" mat-raised-button *ngFor="let k of keyboard[1]"
-      (click)="letter(k)">{{k}}</button>
-    <div fxFlex="1 0 20px"></div>
-  </div>
-  <div fxLayout="row">
-    <button fxFlex="1 0 30px" mat-raised-button>
-      <mat-icon>keyboard_return</mat-icon>
-    </button>
-    <button fxFlex color="warn" fxFlex="1 0 20px" mat-raised-button *ngFor="let k of keyboard[2]"
-      (click)="letter(k)">{{k}}</button>
-    <button fxFlex fxFlex="1 0 30px" mat-raised-button (click)="backspace()">
-      <mat-icon>backspace</mat-icon>
-    </button>
+<div class="keyboard-wrapper mat-drawer">
+  <div class="keyboard">
+    <div fxLayout="row">
+      <button fxFlex [color]="colors[k]" fxFlex="1 0 20px" mat-raised-button *ngFor="let k of keyboard[0]"
+        (click)="letter(k)">{{k}}</button>
+    </div>
+    <div fxLayout="row">
+      <div fxFlex="1 0 20px"></div>
+      <button fxFlex [color]="colors[k]" fxFlex="1 0 20px" mat-raised-button *ngFor="let k of keyboard[1]"
+        (click)="letter(k)">{{k}}</button>
+      <div fxFlex="1 0 20px"></div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlex="1 0 30px"></div>
+      <button fxFlex [color]="colors[k]" fxFlex="1 0 20px" mat-raised-button *ngFor="let k of keyboard[2]"
+        (click)="letter(k)">{{k}}</button>
+      <button fxFlex fxFlex="1 0 30px" mat-raised-button (click)="backspace()">
+        <mat-icon>backspace</mat-icon>
+      </button>
+    </div>
   </div>
 
 </div>
