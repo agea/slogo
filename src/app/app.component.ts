@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Espells } from "espells";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,8 +11,8 @@ export class AppComponent implements OnInit {
   dict: 'standard' | 'extended' = 'standard';
   length = 5;
   height = 6;
-  words: string[] = [];
   word?: string;
+  words: string[] = [];
 
   matrix: { value: string, color?: string }[][] = [];
 
@@ -24,10 +25,29 @@ export class AppComponent implements OnInit {
   ];
 
   letters = this.keyboard[0].concat(this.keyboard[1]).concat(this.keyboard[2]);
+  spellchecker?: Espells;
+
+
+  constructor(
+    private readonly snackBar: MatSnackBar
+  ) {
+
+  }
 
   async ngOnInit(): Promise<void> {
-    this.words = (await (await fetch(`assets/${this.dict}/${this.length}.txt`)).text()).split('\n');
+
+    if (!this.spellchecker) {
+      this.spellchecker = await Espells.fromURL({
+        aff: 'assets/index.aff',
+        dic: 'assets/index.dic'
+      })
+    }
+    this.colors = {};
+
+    this.words = (await (await fetch(`assets/standard/${this.length}.txt`)).text()).split('\n');
+
     this.word = this.words[Math.floor(Math.random() * this.words.length)];
+
     this.matrix = Array.from({ length: this.height }, (x, i) => Array.from({ length: this.length }, (y, j) => ({ value: '' })));
   }
 
@@ -37,6 +57,11 @@ export class AppComponent implements OnInit {
       for (let col of row) {
         if (!col.value) {
           col.value = k;
+
+          document.getElementById(
+            `m${this.matrix.indexOf(row)}_${row.indexOf(col)}`
+          )?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
           if (row.indexOf(col) === this.length - 1) {
             this.checkWord(row);
           }
@@ -47,13 +72,32 @@ export class AppComponent implements OnInit {
   }
 
   private checkWord(row: { value: string, color?: string }[]) {
+
+    const input = row.map(col => col.value).join('');
+
+    if (input === this.word) {
+      this.snackBar.open("Complimenti hai indovinato!", 'Gioca ancora', { duration: 0 }).onAction().subscribe(() => {
+        this.ngOnInit()
+      });
+    }
+
+    if (!this.words.includes(input)) {
+      const check = this.spellchecker!.lookup(input);
+      if (!check.correct || check.warn) {
+        this.snackBar.open(`La parola "${input}" non è valida`);
+        row.forEach(col => col.value = '');
+        return;
+      }
+    }
+
+
     for (let j = 0; j < row.length; j++) {
       const col = row[j];
       const idx = this.word?.indexOf(col.value);
       if (idx == -1) {
         this.colors[col.value] = 'warn';
         col.color = 'warn';
-      } else if (idx !== j) {
+      } else if (this.word?.charAt(j) !== col.value) {
         this.colors[col.value] = 'accent';
         col.color = 'accent';
       } else {
@@ -61,6 +105,14 @@ export class AppComponent implements OnInit {
         col.color = 'primary';
       }
     }
+
+    if (this.matrix.indexOf(row) == this.height - 1) {
+      this.snackBar.open(`La parola era "${this.word}"`, 'Gioca ancora', { duration: 0 }).onAction().subscribe(() => {
+        this.ngOnInit()
+      });
+    }
+
+
   }
 
   backspace() {

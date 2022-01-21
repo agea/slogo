@@ -5,7 +5,7 @@
 <div class="matrix-wrapper">
   <table class="matrix">
     <tr class="word-row" *ngFor="let row of matrix; index as i; first as firstRow; last as lastRow;">
-      <td *ngFor="let col of row; index as j; first as firstCol; last as lastCol;"
+      <td *ngFor="let col of row; index as j; first as firstCol; last as lastCol;" [id]="'m'+i+'_'+j"
         [ngClass]="matrix[i][j].color!+'-bg'">
         {{matrix[i][j].value || ' '}}
       </td>
