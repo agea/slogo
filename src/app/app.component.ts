@@ -27,20 +27,17 @@ export class AppComponent implements OnInit {
   letters = this.keyboard[0].concat(this.keyboard[1]).concat(this.keyboard[2]);
   spellchecker?: Espells;
 
-
   constructor(
     private readonly snackBar: MatSnackBar
-  ) {
-
-  }
+  ) { }
 
   async ngOnInit(): Promise<void> {
 
     if (!this.spellchecker) {
-      this.spellchecker = await Espells.fromURL({
+      Espells.fromURL({
         aff: 'assets/index.aff',
         dic: 'assets/index.dic'
-      })
+      }).then(spellchecker => this.spellchecker = spellchecker);
     }
     this.colors = {};
 
@@ -82,14 +79,13 @@ export class AppComponent implements OnInit {
     }
 
     if (!this.words.includes(input)) {
-      const check = this.spellchecker!.lookup(input);
-      if (!check.correct || check.warn) {
+      const check = this.spellchecker?.lookup(input);
+      if (!check || !check.correct || check.warn) {
         this.snackBar.open(`La parola "${input}" non è valida`);
         row.forEach(col => col.value = '');
         return;
       }
     }
-
 
     for (let j = 0; j < row.length; j++) {
       const col = row[j];

@@ -27,9 +27,10 @@ mat-form-field {
 }
 
 .word-row td {
-  height: 32px;
-  width: 32px;
-  min-width: 32px;
+  height: 8vh;
+  width: 8vh;
+  min-width: 8vh;
+  font-size: 4vh;
   text-align: center;
   text-transform: uppercase;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
