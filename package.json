@@ -7,6 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "build-dict": "ts-node build-dict.ts",
+    "deploy": "ng build --prod --base-href=/slogo/",
     "test": "ng test"
   },
   "private": true,
