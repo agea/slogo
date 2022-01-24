@@ -1,6 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Espells } from "espells";
+import { Espells } from "src/espells";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
