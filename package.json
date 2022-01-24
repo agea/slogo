@@ -2,13 +2,10 @@
   "name": "slogo",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
     "build-dict": "ts-node build-dict.ts",
     "deploy": "ng build --prod --base-href=/slogo/",
-    "test": "ng test"
+    "generate-assets": "pwa-asset-generator ./src/assets/big.png ./src/assets/icons/pwa -i ./src/index.html -c && pwa-asset-generator ./src/assets/big.png ./src/assets/icons/pwa -i ./src/index.html -h"
   },
   "private": true,
   "dependencies": {
@@ -43,6 +40,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "pwa-asset-generator": "^6.0.6",
     "simple-spellchecker": "^1.0.2",
     "ts-node": "^10.4.0",
     "typescript": "^4.2.4"

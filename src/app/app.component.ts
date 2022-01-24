@@ -1,6 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Espells } from "src/espells";
+import { SettingsComponent } from './settings/settings.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -28,7 +30,8 @@ export class AppComponent implements OnInit {
   spellchecker?: Espells;
 
   constructor(
-    private readonly snackBar: MatSnackBar
+    private readonly snackBar: MatSnackBar,
+    private readonly dialog: MatDialog
   ) { }
 
   async ngOnInit(): Promise<void> {
@@ -76,6 +79,7 @@ export class AppComponent implements OnInit {
       this.snackBar.open("Complimenti hai indovinato!", 'Gioca ancora', { duration: 0 }).onAction().subscribe(() => {
         this.ngOnInit()
       });
+      return;
     }
 
     if (!this.words.includes(input)) {
@@ -133,6 +137,15 @@ export class AppComponent implements OnInit {
     if (e.code == 'Backspace') {
       this.backspace();
     }
+  }
+
+  openSettings() {
+    this.dialog.open(SettingsComponent, {
+      data: {
+        height: this.height,
+        length: this.length,
+      },
+    });
   }
 
 }
