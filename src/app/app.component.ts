@@ -75,13 +75,6 @@ export class AppComponent implements OnInit {
 
     const input = row.map(col => col.value).join('');
 
-    if (input === this.word) {
-      this.snackBar.open("Complimenti hai indovinato!", 'Gioca ancora', { duration: 0 }).onAction().subscribe(() => {
-        this.ngOnInit()
-      });
-      return;
-    }
-
     if (!this.words.includes(input)) {
       const check = this.spellchecker?.lookup(input);
       if (!check || !check.correct || check.warn) {
@@ -104,6 +97,13 @@ export class AppComponent implements OnInit {
         this.colors[col.value] = 'primary';
         col.color = 'primary';
       }
+    }
+
+    if (input === this.word) {
+      this.snackBar.open("Complimenti hai indovinato!", 'Gioca ancora', { duration: 0 }).onAction().subscribe(() => {
+        this.ngOnInit()
+      });
+      return;
     }
 
     if (this.matrix.indexOf(row) == this.height - 1) {
