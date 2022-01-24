@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1643011382924,
+  "timestamp": 1643041811165,
   "index": "/slogo/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "/slogo/favicon.ico",
         "/slogo/index.html",
-        "/slogo/main.b7b02757e0d2cb3da794.js",
+        "/slogo/main.b21f85a8524e878ef600.js",
         "/slogo/manifest.webmanifest",
         "/slogo/polyfills.4a8eba0208ad951c67ba.js",
         "/slogo/runtime.290fbefc183367bf46d2.js",
-        "/slogo/styles.8d5f3f39e0044dd155ec.css"
+        "/slogo/styles.71a18335928011ed4060.css"
       ],
       "patterns": []
     },
@@ -33,6 +33,12 @@
         "/slogo/MaterialIcons-Regular.5e7382c63da0098d634a.ttf",
         "/slogo/MaterialIcons-Regular.83bebaf37c09c7e1c3ee.woff",
         "/slogo/MaterialIcons-Regular.cff684e59ffb052d72cb.woff2",
+        "/slogo/assets/fonts/roboto-v29-latin-ext_latin-300.woff",
+        "/slogo/assets/fonts/roboto-v29-latin-ext_latin-300.woff2",
+        "/slogo/assets/fonts/roboto-v29-latin-ext_latin-700.woff",
+        "/slogo/assets/fonts/roboto-v29-latin-ext_latin-700.woff2",
+        "/slogo/assets/fonts/roboto-v29-latin-ext_latin-regular.woff",
+        "/slogo/assets/fonts/roboto-v29-latin-ext_latin-regular.woff2",
         "/slogo/assets/icons/icon-128x128.png",
         "/slogo/assets/icons/icon-144x144.png",
         "/slogo/assets/icons/icon-152x152.png",
@@ -60,7 +66,13 @@
         "/slogo/assets/standard/6.txt",
         "/slogo/assets/standard/7.txt",
         "/slogo/assets/standard/8.txt",
-        "/slogo/assets/standard/9.txt"
+        "/slogo/assets/standard/9.txt",
+        "/slogo/roboto-v29-latin-ext_latin-300.06aac491de5c92a7da30.woff",
+        "/slogo/roboto-v29-latin-ext_latin-300.d3f966a5da6555795b2d.woff2",
+        "/slogo/roboto-v29-latin-ext_latin-700.02efd1dc19dbb85f5831.woff2",
+        "/slogo/roboto-v29-latin-ext_latin-700.1b274fb02df91effa8d8.woff",
+        "/slogo/roboto-v29-latin-ext_latin-regular.5bfc683d7010de0511e3.woff",
+        "/slogo/roboto-v29-latin-ext_latin-regular.671b8a3375d3edd1e0e0.woff2"
       ],
       "patterns": []
     }
@@ -71,6 +83,12 @@
     "/slogo/MaterialIcons-Regular.5e7382c63da0098d634a.ttf": "fc05de31234e0090f7ddc28ce1b23af4026cb1da",
     "/slogo/MaterialIcons-Regular.83bebaf37c09c7e1c3ee.woff": "c6c953c2ccb2ca9abb21db8dbf473b5a435f0082",
     "/slogo/MaterialIcons-Regular.cff684e59ffb052d72cb.woff2": "09963592e8c953cc7e14e3fb0a5b05d5042e8435",
+    "/slogo/assets/fonts/roboto-v29-latin-ext_latin-300.woff": "89eb482a276cc9cc756a4e50940611ae41c9ed2d",
+    "/slogo/assets/fonts/roboto-v29-latin-ext_latin-300.woff2": "8f749d63fa11272907c29ce10ebace1c7591ef99",
+    "/slogo/assets/fonts/roboto-v29-latin-ext_latin-700.woff": "67a1f9c5d72810715f6b94f1500aaebf1cbbdee4",
+    "/slogo/assets/fonts/roboto-v29-latin-ext_latin-700.woff2": "6418f91231908276abb7c8f711b25f835de2afb7",
+    "/slogo/assets/fonts/roboto-v29-latin-ext_latin-regular.woff": "605efb6384c3ae1fef7521893b84c64cb5a8b136",
+    "/slogo/assets/fonts/roboto-v29-latin-ext_latin-regular.woff2": "f861575d697f12b77dc7fe6f8e6ba63905673e32",
     "/slogo/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "/slogo/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
     "/slogo/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
@@ -99,13 +117,19 @@
     "/slogo/assets/standard/7.txt": "bb4b82a86f8cde16297da9a90d573c2aaa1140f6",
     "/slogo/assets/standard/8.txt": "dd535b8fb79d31a51570f86729a08311a872374d",
     "/slogo/assets/standard/9.txt": "f8253d0a5681d6af48d616bf008f2b4a5de6b5a8",
-    "/slogo/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/slogo/index.html": "9ba1b5b4f4f4778aac0f4e4a3144cef6423386cf",
-    "/slogo/main.b7b02757e0d2cb3da794.js": "fffb476bc82b040ee32726235ce59f4663649944",
-    "/slogo/manifest.webmanifest": "f429645471af0208f6b70bb568b5920f1d1e0e6f",
+    "/slogo/favicon.ico": "9300de63cb88fe9ab55448c9d5cf5a6fbc265648",
+    "/slogo/index.html": "5453a82f1661dbdd331a7b5b534c5e9b4c239ed0",
+    "/slogo/main.b21f85a8524e878ef600.js": "dbf986f7085539f883870be31a16786082a0a9ad",
+    "/slogo/manifest.webmanifest": "c766533f373e5d5b80efa2c245bb3688ab612cd9",
     "/slogo/polyfills.4a8eba0208ad951c67ba.js": "3daa73d3c5c236e293c89e9af335364e5b834237",
+    "/slogo/roboto-v29-latin-ext_latin-300.06aac491de5c92a7da30.woff": "89eb482a276cc9cc756a4e50940611ae41c9ed2d",
+    "/slogo/roboto-v29-latin-ext_latin-300.d3f966a5da6555795b2d.woff2": "8f749d63fa11272907c29ce10ebace1c7591ef99",
+    "/slogo/roboto-v29-latin-ext_latin-700.02efd1dc19dbb85f5831.woff2": "6418f91231908276abb7c8f711b25f835de2afb7",
+    "/slogo/roboto-v29-latin-ext_latin-700.1b274fb02df91effa8d8.woff": "67a1f9c5d72810715f6b94f1500aaebf1cbbdee4",
+    "/slogo/roboto-v29-latin-ext_latin-regular.5bfc683d7010de0511e3.woff": "605efb6384c3ae1fef7521893b84c64cb5a8b136",
+    "/slogo/roboto-v29-latin-ext_latin-regular.671b8a3375d3edd1e0e0.woff2": "f861575d697f12b77dc7fe6f8e6ba63905673e32",
     "/slogo/runtime.290fbefc183367bf46d2.js": "7bc7dadf065432433d706253ec144253e4dcd53c",
-    "/slogo/styles.8d5f3f39e0044dd155ec.css": "5807669ceef2edd8bc884a4b08a70870accdc4d2"
+    "/slogo/styles.71a18335928011ed4060.css": "d58427583e608b294d891de2be155007529e7ec6"
   },
   "navigationUrls": [
     {
