@@ -1,0 +1,129 @@
+{
+  "configVersion": 1,
+  "timestamp": 1643011382924,
+  "index": "/slogo/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/slogo/favicon.ico",
+        "/slogo/index.html",
+        "/slogo/main.b7b02757e0d2cb3da794.js",
+        "/slogo/manifest.webmanifest",
+        "/slogo/polyfills.4a8eba0208ad951c67ba.js",
+        "/slogo/runtime.290fbefc183367bf46d2.js",
+        "/slogo/styles.8d5f3f39e0044dd155ec.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/slogo/3rdpartylicenses.txt",
+        "/slogo/MaterialIcons-Regular.5e7382c63da0098d634a.ttf",
+        "/slogo/MaterialIcons-Regular.83bebaf37c09c7e1c3ee.woff",
+        "/slogo/MaterialIcons-Regular.cff684e59ffb052d72cb.woff2",
+        "/slogo/assets/icons/icon-128x128.png",
+        "/slogo/assets/icons/icon-144x144.png",
+        "/slogo/assets/icons/icon-152x152.png",
+        "/slogo/assets/icons/icon-192x192.png",
+        "/slogo/assets/icons/icon-384x384.png",
+        "/slogo/assets/icons/icon-512x512.png",
+        "/slogo/assets/icons/icon-72x72.png",
+        "/slogo/assets/icons/icon-96x96.png",
+        "/slogo/assets/index.aff",
+        "/slogo/assets/index.dic",
+        "/slogo/assets/standard/10.txt",
+        "/slogo/assets/standard/11.txt",
+        "/slogo/assets/standard/12.txt",
+        "/slogo/assets/standard/13.txt",
+        "/slogo/assets/standard/14.txt",
+        "/slogo/assets/standard/15.txt",
+        "/slogo/assets/standard/16.txt",
+        "/slogo/assets/standard/17.txt",
+        "/slogo/assets/standard/18.txt",
+        "/slogo/assets/standard/19.txt",
+        "/slogo/assets/standard/20.txt",
+        "/slogo/assets/standard/3.txt",
+        "/slogo/assets/standard/4.txt",
+        "/slogo/assets/standard/5.txt",
+        "/slogo/assets/standard/6.txt",
+        "/slogo/assets/standard/7.txt",
+        "/slogo/assets/standard/8.txt",
+        "/slogo/assets/standard/9.txt"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/slogo/3rdpartylicenses.txt": "88ff3a1a66303bf7e08c37c57a117677046c2933",
+    "/slogo/MaterialIcons-Regular.5e7382c63da0098d634a.ttf": "fc05de31234e0090f7ddc28ce1b23af4026cb1da",
+    "/slogo/MaterialIcons-Regular.83bebaf37c09c7e1c3ee.woff": "c6c953c2ccb2ca9abb21db8dbf473b5a435f0082",
+    "/slogo/MaterialIcons-Regular.cff684e59ffb052d72cb.woff2": "09963592e8c953cc7e14e3fb0a5b05d5042e8435",
+    "/slogo/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/slogo/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/slogo/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/slogo/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/slogo/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/slogo/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/slogo/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/slogo/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/slogo/assets/index.aff": "066454acf3d76a9e69a909097a4c3d28ab894837",
+    "/slogo/assets/index.dic": "1046f8edc8ae078e5a6329144a5b36b4569bdd05",
+    "/slogo/assets/standard/10.txt": "693df0b6c1f44720b0c5f3d45b44d9db9383efb5",
+    "/slogo/assets/standard/11.txt": "fc10f4bcb49dc4b83d97c93fa94495ac0590debb",
+    "/slogo/assets/standard/12.txt": "1967411e1bb785a4074f378172817d0e5cadcd73",
+    "/slogo/assets/standard/13.txt": "012acaf50d57e8f3ac9f7c75fd76de2c5e0cb6d6",
+    "/slogo/assets/standard/14.txt": "d49f1c8111eafcd9ebc1fd8e43ce7ececb39ac3d",
+    "/slogo/assets/standard/15.txt": "ebea9ebad0cc46cd8aad430af9d6ae540240a484",
+    "/slogo/assets/standard/16.txt": "9e5fc07139ad52fd89948fd824986485f462ff89",
+    "/slogo/assets/standard/17.txt": "65016ad8710c5919de93fc6cef860a330e73a52c",
+    "/slogo/assets/standard/18.txt": "6e587341c76c4deb6c9ebd49474423bbc85b970f",
+    "/slogo/assets/standard/19.txt": "716a568c1f83c720e657dd545885bc9902e07b6b",
+    "/slogo/assets/standard/20.txt": "ed8922deedb73989cc11f836f5a800d3127fedb9",
+    "/slogo/assets/standard/3.txt": "be88724a138a0e1c5c57aaacba8b006248af7e03",
+    "/slogo/assets/standard/4.txt": "4fd0501ba1f68de6c2cd6cc4782ab2dea362120d",
+    "/slogo/assets/standard/5.txt": "9b44d6cf744241e302da61e253f87d6676b0db04",
+    "/slogo/assets/standard/6.txt": "2a3fc0ab536c4f5fcefc026664af56825fdddc6b",
+    "/slogo/assets/standard/7.txt": "bb4b82a86f8cde16297da9a90d573c2aaa1140f6",
+    "/slogo/assets/standard/8.txt": "dd535b8fb79d31a51570f86729a08311a872374d",
+    "/slogo/assets/standard/9.txt": "f8253d0a5681d6af48d616bf008f2b4a5de6b5a8",
+    "/slogo/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/slogo/index.html": "9ba1b5b4f4f4778aac0f4e4a3144cef6423386cf",
+    "/slogo/main.b7b02757e0d2cb3da794.js": "fffb476bc82b040ee32726235ce59f4663649944",
+    "/slogo/manifest.webmanifest": "f429645471af0208f6b70bb568b5920f1d1e0e6f",
+    "/slogo/polyfills.4a8eba0208ad951c67ba.js": "3daa73d3c5c236e293c89e9af335364e5b834237",
+    "/slogo/runtime.290fbefc183367bf46d2.js": "7bc7dadf065432433d706253ec144253e4dcd53c",
+    "/slogo/styles.8d5f3f39e0044dd155ec.css": "5807669ceef2edd8bc884a4b08a70870accdc4d2"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
