@@ -36,9 +36,8 @@ mat-form-field {
 }
 
 .word-row td {
-  height: 8vh;
-  width: 8vh;
-  min-width: 8vh;
+  padding: 0;
+  line-height: 0;
   font-size: 4vh;
   text-align: center;
   text-transform: uppercase;
@@ -49,11 +48,12 @@ mat-form-field {
 
 .matrix {
   margin: auto;
-  border-spacing: 4px;
+  border-spacing: 1vw;
+  padding-bottom: 2em;
 }
 
 .matrix-wrapper {
-  height: calc(100% - 60px);
+  height: calc(100% - 200px - env(safe-area-inset-bottom));
   width: 100%;
   overflow: auto;
 }

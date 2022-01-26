@@ -15,6 +15,11 @@ export class AppComponent implements OnInit {
   height = 6;
   word?: string;
   words: string[] = [];
+  cellSize = '8vw';
+  fontSize = '4vw';
+  borderSpacing = '1vw';
+
+  pause = false;
 
   matrix: { value: string, color?: string }[][] = [];
 
@@ -47,6 +52,13 @@ export class AppComponent implements OnInit {
     this.words = (await (await fetch(`assets/standard/${this.length}.txt`)).text()).split('\n');
 
     this.word = this.words[Math.floor(Math.random() * this.words.length)];
+
+
+    const size = (90 / (this.length * 9 + 1)) * 8;
+
+    this.cellSize = `min( 10vmin, ${(size).toFixed(2)}vw)`;
+    this.fontSize = `min( 5vmin, ${(size / 2).toFixed(2)}vw)`;
+    this.borderSpacing = `min( 1.25vmin, ${(size / 8).toFixed(2)}vw)`;
 
     this.matrix = Array.from({ length: this.height }, (x, i) => Array.from({ length: this.length }, (y, j) => ({ value: '' })));
   }
@@ -131,6 +143,9 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:keydown', ['$event'])
   keypress(e: KeyboardEvent) {
+    if (this.pause) {
+      return;
+    }
     if (this.letters.includes(e.key.toLowerCase())) {
       this.letter(e.key);
     }
@@ -145,6 +160,10 @@ export class AppComponent implements OnInit {
         height: this.height,
         length: this.length,
       },
+    }).afterClosed().subscribe(data => {
+      this.height = data.height;
+      this.length = data.length;
+      this.ngOnInit();
     });
   }
 

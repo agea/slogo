@@ -1,1 +1,21 @@
-<p>settings works!</p>
+<mat-form-field>
+  <mat-select [(ngModel)]="data.length" placeholder="Lunghezza parola">
+    <mat-option *ngFor="let l of lengths" [value]="l">{{l}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-select [(ngModel)]="data.height" placeholder="Numero di tentativi">
+    <mat-option *ngFor="let h of heights" [value]="h">{{h}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div fxLayout="row" fxLayoutAlign="space-between">
+  <button mat-button [mat-dialog-close]>
+    Chiudi
+  </button>
+  <button mat-button mat-raised-button (click)="ok()">
+    OK
+  </button>
+
+</div>

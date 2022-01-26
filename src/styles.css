@@ -75,3 +75,11 @@ app-root {
 .warn-txt {
   color: var(--warn-color) !important;
 }
+
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 0;
+}
+
+.mat-dialog-container {
+  box-shadow: 0 0 150px #000;
+}

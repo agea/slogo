@@ -4,7 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,6 +14,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { SettingsComponent } from './settings/settings.component';
+
 
 
 @NgModule({
@@ -26,7 +29,9 @@ import { SettingsComponent } from './settings/settings.component';
     FlexLayoutModule,
     MatSnackBarModule,
     MatIconModule,
+    MatSelectModule,
     MatDialogModule,
+    MatFormFieldModule,
     MatButtonModule,
     MatCardModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
