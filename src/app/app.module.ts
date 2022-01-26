@@ -14,13 +14,15 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { SettingsComponent } from './settings/settings.component';
+import { EndGameComponent } from './end-game/end-game.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SettingsComponent
+    SettingsComponent,
+    EndGameComponent
   ],
   imports: [
     BrowserModule,

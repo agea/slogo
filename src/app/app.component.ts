@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Espells } from "src/espells";
+import { EndGameComponent } from './end-game/end-game.component';
 import { SettingsComponent } from './settings/settings.component';
 @Component({
   selector: 'app-root',
@@ -48,6 +49,7 @@ export class AppComponent implements OnInit {
       }).then(spellchecker => this.spellchecker = spellchecker);
     }
     this.colors = {};
+    this.pause = false;
 
     this.words = (await (await fetch(`assets/standard/${this.length}.txt`)).text()).split('\n');
 
@@ -64,6 +66,9 @@ export class AppComponent implements OnInit {
   }
 
   letter(k: string) {
+    if (this.pause) {
+      return;
+    }
     k = k.charAt(0).toLowerCase();
     for (let row of this.matrix) {
       for (let col of row) {
@@ -112,14 +117,16 @@ export class AppComponent implements OnInit {
     }
 
     if (input === this.word) {
-      this.snackBar.open("Complimenti hai indovinato!", 'Gioca ancora', { duration: 0 }).onAction().subscribe(() => {
+      this.pause = true;
+      this.dialog.open(EndGameComponent, { data: { word: this.word, win: true } }).afterClosed().subscribe(() => {
         this.ngOnInit()
       });
       return;
     }
 
     if (this.matrix.indexOf(row) == this.height - 1) {
-      this.snackBar.open(`La parola era "${this.word}"`, 'Gioca ancora', { duration: 0 }).onAction().subscribe(() => {
+      this.pause = true;
+      this.dialog.open(EndGameComponent, { data: { word: this.word, win: false } }).afterClosed().subscribe(() => {
         this.ngOnInit()
       });
     }
@@ -155,15 +162,19 @@ export class AppComponent implements OnInit {
   }
 
   openSettings() {
+    this.pause = true;
     this.dialog.open(SettingsComponent, {
       data: {
         height: this.height,
         length: this.length,
       },
     }).afterClosed().subscribe(data => {
-      this.height = data.height;
-      this.length = data.length;
-      this.ngOnInit();
+      this.pause = false;
+      if (data) {
+        this.height = data.height;
+        this.length = data.length;
+        this.ngOnInit();
+      }
     });
   }
 

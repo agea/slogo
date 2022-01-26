@@ -37,7 +37,7 @@ mat-form-field {
 
 .word-row td {
   padding: 0;
-  line-height: 0;
+  vertical-align: middle;
   font-size: 4vh;
   text-align: center;
   text-transform: uppercase;

@@ -1,0 +1,15 @@
+<div *ngIf="data.win">
+  <h1>Complimenti! 🏆</h1>
+  <p>Hai indovinato</p>
+</div>
+
+<div *ngIf="!data.win">
+  <h1>Mi dispiace 🥺</h1>
+  <p>Non hai indovinato, la parola era <strong>{{data.word}}</strong></p>
+</div>
+
+<br><br>
+
+<div fxLayoutAlign="end">
+  <button mat-raised-button [mat-dialog-close]>Gioca Ancora</button>
+</div>
