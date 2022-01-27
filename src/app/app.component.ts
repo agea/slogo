@@ -16,9 +16,9 @@ export class AppComponent implements OnInit {
   height = 6;
   word?: string;
   words: string[] = [];
-  cellSize = '8vw';
-  fontSize = '4vw';
-  borderSpacing = '1vw';
+  cellSize = '10vw';
+  fontSize = '5vw';
+  borderSpacing = '1.25vw';
 
   pause = false;
 
@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
     this.word = this.words[Math.floor(Math.random() * this.words.length)];
 
 
-    const size = (90 / (this.length * 9 + 1)) * 8;
+    const size = (95 / (this.length * 9 + 1)) * 8;
 
     this.cellSize = `min( 10vmin, ${(size).toFixed(2)}vw)`;
     this.fontSize = `min( 5vmin, ${(size / 2).toFixed(2)}vw)`;
