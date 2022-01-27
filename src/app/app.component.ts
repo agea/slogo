@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Espells } from "src/espells";
 import { EndGameComponent } from './end-game/end-game.component';
@@ -37,7 +37,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private readonly snackBar: MatSnackBar,
-    private readonly dialog: MatDialog
+    //private readonly dialog: MatDialog,
+    private readonly bottomSheet: MatBottomSheet
   ) { }
 
   async ngOnInit(): Promise<void> {
@@ -58,9 +59,9 @@ export class AppComponent implements OnInit {
 
     const size = (95 / (this.length * 9 + 1)) * 8;
 
-    this.cellSize = `min( 10vmin, ${(size).toFixed(2)}vw)`;
-    this.fontSize = `min( 5vmin, ${(size / 2).toFixed(2)}vw)`;
-    this.borderSpacing = `min( 1.25vmin, ${(size / 8).toFixed(2)}vw)`;
+    this.cellSize = `min(80px, min( 14vmin, ${(size).toFixed(2)}vw))`;
+    this.fontSize = `min(40px, min( 7vmin, ${(size / 2).toFixed(2)}vw))`;
+    this.borderSpacing = `min(10px, min( 1.75vmin, ${(size / 8).toFixed(2)}vw))`;
 
     this.matrix = Array.from({ length: this.height }, (x, i) => Array.from({ length: this.length }, (y, j) => ({ value: '' })));
   }
@@ -118,7 +119,7 @@ export class AppComponent implements OnInit {
 
     if (input === this.word) {
       this.pause = true;
-      this.dialog.open(EndGameComponent, { data: { word: this.word, win: true } }).afterClosed().subscribe(() => {
+      this.bottomSheet.open(EndGameComponent, { data: { word: this.word, win: true } }).afterDismissed().subscribe(() => {
         this.ngOnInit()
       });
       return;
@@ -126,7 +127,7 @@ export class AppComponent implements OnInit {
 
     if (this.matrix.indexOf(row) == this.height - 1) {
       this.pause = true;
-      this.dialog.open(EndGameComponent, { data: { word: this.word, win: false } }).afterClosed().subscribe(() => {
+      this.bottomSheet.open(EndGameComponent, { data: { word: this.word, win: false } }).afterDismissed().subscribe(() => {
         this.ngOnInit()
       });
     }
@@ -163,12 +164,12 @@ export class AppComponent implements OnInit {
 
   openSettings() {
     this.pause = true;
-    this.dialog.open(SettingsComponent, {
+    this.bottomSheet.open(SettingsComponent, {
       data: {
         height: this.height,
         length: this.length,
       },
-    }).afterClosed().subscribe(data => {
+    }).afterDismissed().subscribe(data => {
       this.pause = false;
       if (data) {
         this.height = data.height;

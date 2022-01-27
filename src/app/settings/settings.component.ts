@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-settings',
@@ -12,12 +12,12 @@ export class SettingsComponent {
   heights = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: { height: number, length: number },
-    private readonly dialogRef: MatDialogRef<SettingsComponent>
+    @Inject(MAT_BOTTOM_SHEET_DATA) public data: { height: number, length: number },
+    public readonly bottomSheetRef: MatBottomSheetRef<SettingsComponent>
   ) { }
 
   ok() {
-    this.dialogRef.close(this.data);
+    this.bottomSheetRef.dismiss(this.data);
   }
 
 

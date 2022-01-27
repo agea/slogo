@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-end-game',
@@ -8,7 +8,10 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class EndGameComponent {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: { word: string, win: boolean }) { }
+  constructor(
+    @Inject(MAT_BOTTOM_SHEET_DATA) public data: { word: string, win: boolean },
+    public readonly bottomSheetRef: MatBottomSheetRef<EndGameComponent>
+  ) { }
 
 
 

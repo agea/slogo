@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -13,8 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
-import { SettingsComponent } from './settings/settings.component';
 import { EndGameComponent } from './end-game/end-game.component';
+import { SettingsComponent } from './settings/settings.component';
 
 
 
@@ -33,6 +34,7 @@ import { EndGameComponent } from './end-game/end-game.component';
     MatIconModule,
     MatSelectModule,
     MatDialogModule,
+    MatBottomSheetModule,
     MatFormFieldModule,
     MatButtonModule,
     MatCardModule,

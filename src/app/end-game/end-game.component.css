@@ -5,3 +5,7 @@ h1 {
   padding-bottom: 1em;
   margin-bottom: 1em;
 }
+:host {
+  display: block;
+  padding-bottom: max(.5em, env(safe-area-inset-bottom));
+}

@@ -1,3 +1,5 @@
+<h1>Impostazioni</h1>
+
 <mat-form-field>
   <mat-select [(ngModel)]="data.length" placeholder="Lunghezza parola">
     <mat-option *ngFor="let l of lengths" [value]="l">{{l}}</mat-option>
@@ -11,7 +13,7 @@
 </mat-form-field>
 
 <div fxLayout="row" fxLayoutAlign="space-between">
-  <button mat-button [mat-dialog-close]>
+  <button mat-button (click)="bottomSheetRef.dismiss()">
     Chiudi
   </button>
   <button mat-button mat-raised-button (click)="ok()">
