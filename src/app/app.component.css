@@ -32,11 +32,13 @@ mat-form-field {
   margin: 4px 2px;
   text-transform: uppercase;
   min-width: 0;
+  min-height: 40px ;
   padding: 0 !important;
 }
 
 .word-row td {
   padding: 0;
+  line-height: 1em;
   vertical-align: middle;
   font-size: 4vh;
   text-align: center;
