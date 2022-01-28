@@ -1,42 +1,45 @@
 <!DOCTYPE html><html lang="en"><head>
-    <meta charset="utf-8">
-    <title>Slogo</title>
-    <base href="/slogo/">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="manifest" href="manifest.webmanifest">
-    <meta name="theme-color" content="#eee">
-    <link rel="apple-touch-icon" href="assets/icons/pwa/apple-icon-180.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
-    <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-  <style>.mat-typography{font:400 14px/20px Roboto;letter-spacing:.0179em;}body{--primary-color:#17b30d;--primary-lighter-color:#b9e8b6;--primary-darker-color:#0d9a07;--text-primary-color:#fff;--text-primary-lighter-color:#000000de;--text-primary-darker-color:#fff;--accent-color:#ffef00;--accent-lighter-color:#fffab3;--accent-darker-color:#ffe800;--text-accent-color:#000000de;--text-accent-lighter-color:#000000de;--text-accent-darker-color:#000000de;--warn-color:#747474;--warn-lighter-color:#d5d5d5;--warn-darker-color:#575757;--text-warn-color:#fff;--text-warn-lighter-color:#000000de;--text-warn-darker-color:#fff;}.mat-drawer-container{background-color:#fafafa;color:#000000de;}@font-face{font-family:Roboto;font-style:normal;font-weight:300;src:local(""),url(roboto-v29-latin-ext_latin-300.d3f966a5da6555795b2d.woff2) format("woff2"),url(roboto-v29-latin-ext_latin-300.06aac491de5c92a7da30.woff) format("woff");}@font-face{font-family:Roboto;font-style:normal;font-weight:400;src:local(""),url(roboto-v29-latin-ext_latin-regular.671b8a3375d3edd1e0e0.woff2) format("woff2"),url(roboto-v29-latin-ext_latin-regular.5bfc683d7010de0511e3.woff) format("woff");}@font-face{font-family:Roboto;font-style:normal;font-weight:700;src:local(""),url(roboto-v29-latin-ext_latin-700.02efd1dc19dbb85f5831.woff2) format("woff2"),url(roboto-v29-latin-ext_latin-700.1b274fb02df91effa8d8.woff) format("woff");}app-root,body,html{height:100%;font-family:Roboto;margin:0;display:block;overflow:auto;}</style><link rel="stylesheet" href="styles.03b56250c1a578f4dc2f.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.03b56250c1a578f4dc2f.css"></noscript></head>
-  <body class="mat-typography mat-drawer-container">
-    <app-root></app-root>
-    <noscript>Please enable JavaScript to continue using this application.</noscript>
-  <script src="runtime.290fbefc183367bf46d2.js" defer></script><script src="polyfills.4a8eba0208ad951c67ba.js" defer></script><script src="main.02fcd459e8b01d732891.js" defer></script>
+  <meta charset="utf-8">
+  <title>slogo</title>
+  <base href="/slogo/">
+  <meta name="description" content="Indovina la parola! Un gioco ispirato a WORDLE, ma con più modalità di gioco">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#eee">
+  <link rel="apple-touch-icon" href="assets/icons/pwa/apple-icon-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+  <link rel="apple-touch-startup-image" href="assets/icons/pwa/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+<style>.mat-typography{font:400 14px/20px Roboto;letter-spacing:.0179em;}body{--primary-color:#17b30d;--primary-lighter-color:#b9e8b6;--primary-darker-color:#0d9a07;--text-primary-color:#fff;--text-primary-lighter-color:#000000de;--text-primary-darker-color:#fff;--accent-color:#ffef00;--accent-lighter-color:#fffab3;--accent-darker-color:#ffe800;--text-accent-color:#000000de;--text-accent-lighter-color:#000000de;--text-accent-darker-color:#000000de;--warn-color:#747474;--warn-lighter-color:#d5d5d5;--warn-darker-color:#575757;--text-warn-color:#fff;--text-warn-lighter-color:#000000de;--text-warn-darker-color:#fff;}.mat-drawer-container{background-color:#fafafa;color:#000000de;}@font-face{font-family:Roboto;font-style:normal;font-weight:300;src:local(""),url(roboto-v29-latin-ext_latin-300.d3f966a5da6555795b2d.woff2) format("woff2"),url(roboto-v29-latin-ext_latin-300.06aac491de5c92a7da30.woff) format("woff");}@font-face{font-family:Roboto;font-style:normal;font-weight:400;src:local(""),url(roboto-v29-latin-ext_latin-regular.671b8a3375d3edd1e0e0.woff2) format("woff2"),url(roboto-v29-latin-ext_latin-regular.5bfc683d7010de0511e3.woff) format("woff");}@font-face{font-family:Roboto;font-style:normal;font-weight:700;src:local(""),url(roboto-v29-latin-ext_latin-700.02efd1dc19dbb85f5831.woff2) format("woff2"),url(roboto-v29-latin-ext_latin-700.1b274fb02df91effa8d8.woff) format("woff");}app-root,body,html{height:100%;font-family:Roboto;margin:0;display:block;overflow:auto;}</style><link rel="stylesheet" href="styles.03b56250c1a578f4dc2f.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.03b56250c1a578f4dc2f.css"></noscript></head>
+
+<body class="mat-typography mat-drawer-container">
+  <app-root></app-root>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
+<script src="runtime.290fbefc183367bf46d2.js" defer></script><script src="polyfills.4a8eba0208ad951c67ba.js" defer></script><script src="main.4231713e6da040eb198a.js" defer></script>
+
 </body></html>
