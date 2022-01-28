@@ -16,6 +16,7 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { EndGameComponent } from './end-game/end-game.component';
 import { SettingsComponent } from './settings/settings.component';
+import { HelpComponent } from './help/help.component';
 
 
 
@@ -23,7 +24,8 @@ import { SettingsComponent } from './settings/settings.component';
   declarations: [
     AppComponent,
     SettingsComponent,
-    EndGameComponent
+    EndGameComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,10 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Espells } from "src/espells";
 import { EndGameComponent } from './end-game/end-game.component';
+import { HelpComponent } from './help/help.component';
 import { SettingsComponent } from './settings/settings.component';
 @Component({
   selector: 'app-root',
@@ -37,11 +39,16 @@ export class AppComponent implements OnInit {
 
   constructor(
     private readonly snackBar: MatSnackBar,
-    //private readonly dialog: MatDialog,
+    private readonly dialog: MatDialog,
     private readonly bottomSheet: MatBottomSheet
   ) { }
 
   async ngOnInit(): Promise<void> {
+
+    if (!localStorage.getItem('help-closed')) {
+      this.openHelp();
+    }
+
 
     if (!this.spellchecker) {
       Espells.fromURL({
@@ -64,6 +71,10 @@ export class AppComponent implements OnInit {
     this.borderSpacing = `min(10px, min( 1.75vmin, ${(size / 8).toFixed(2)}vw))`;
 
     this.matrix = Array.from({ length: this.height }, (x, i) => Array.from({ length: this.length }, (y, j) => ({ value: '' })));
+  }
+
+  openHelp(): void {
+    this.dialog.open(HelpComponent).afterClosed().subscribe(() => localStorage.setItem('help-closed', 'true'));
   }
 
   letter(k: string) {

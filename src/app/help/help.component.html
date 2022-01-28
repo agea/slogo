@@ -1,0 +1,46 @@
+<h2>
+  Indovina la <strong>parola</strong>!
+</h2>
+
+<p>
+  <em>Questo gioco è ispirato a <a target="_blank" href="https://www.powerlanguage.co.uk/wordle/">WORDLE</a>
+    (e anche ad <a target="_blank" href="https://qntm.org/files/wordle/index.html">ABSURDLE</a> )</em>
+</p>
+
+<p>
+  Dopo ogni tentativo, i colori delle tessere cambieranno per mostrarti quanto vicino sei andato ad indovinare la
+  parola.
+</p>
+
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <div>
+    <div class="letter primary-bg"> D </div>
+  </div>
+  <div fxFlex>
+    La lettera <strong>D</strong> è nella parola ed è nel posto giusto.
+  </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <div class="letter accent-bg"> H </div>
+  <div fxFlex>
+    La lettera <strong>H</strong> è nella parola ma nel posto sbagliato.
+  </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <div class="letter warn-bg"> N </div>
+  <div fxFlex>
+    La lettera <strong>N</strong> non è nella parola.
+  </div>
+</div>
+<br>
+<br>
+<p>
+  Puoi cambiare la lunghezza delle parole e il numero di tentativi dalle impostazioni (in alto a destra), inoltre puoi
+  mettere il gioco in modalità <em>antagonista</em>
+</p>
+
+<div fxLayoutAlign="space-between">
+  <iframe src="https://ghbtns.com/github-btn.html?user=agea&repo=slogo&type=star&count=true&size=large" frameborder="0"
+    scrolling="0" width="170" height="30" title="GitHub"></iframe>
+  <button mat-raised-button color="primary" [mat-dialog-close]>Gioca!</button>
+</div>

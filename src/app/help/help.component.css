@@ -1,0 +1,30 @@
+:host {
+  display: block;
+  max-width: 400px;
+}
+
+h2 {
+  text-align: center;
+}
+
+a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.letter {
+  padding: 0;
+  line-height: 8vmin;
+  vertical-align: middle;
+  height: 8vmin;
+  width: 8vmin;
+  font-size: 4vmin;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  border-radius: 3px;
+  display: inline-block;
+  margin: 5px;
+}
