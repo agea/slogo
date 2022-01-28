@@ -3,7 +3,7 @@ var SpellChecker = require('simple-spellchecker');
 
 const checker = SpellChecker.getDictionarySync('it-IT');
 
-const dictionary = fs.readFileSync('src/data/paisa.txt', 'utf-8').split('\n');
+const dictionary = fs.readFileSync('src/data/input.txt', 'utf-8').split('\n');
 
 
 let lcount = 0;
@@ -46,7 +46,9 @@ const buckets = dictionary.reduce((acc: any, line: string) => {
 }, {});
 
 Object.keys(buckets).forEach(len => {
-
+  if (+len > 20) {
+    return
+  }
   const s = new Set<string>();
 
   const current: string[] = fs.readFileSync(`src/assets/standard/${len}.txt`, 'utf-8').split('\n');
