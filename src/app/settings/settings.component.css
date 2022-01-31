@@ -8,3 +8,7 @@ mat-form-field {
   width: 100%;
   display: block;
 }
+
+.actions {
+  padding-top: 1em;
+}

@@ -54,7 +54,7 @@ mat-form-field {
 }
 
 .matrix-wrapper {
-  height: calc(100% - 200px - env(safe-area-inset-bottom));
+  height: calc(100% - 224px - env(safe-area-inset-bottom));
   width: 100%;
   overflow: auto;
 }
