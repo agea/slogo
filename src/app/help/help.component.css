@@ -15,11 +15,11 @@ a {
 
 .letter {
   padding: 0;
-  line-height: 8vmin;
+  line-height: max(40px, 8vmin);
   vertical-align: middle;
-  height: 8vmin;
-  width: 8vmin;
-  font-size: 4vmin;
+  height: max(40px, 8vmin);
+  width: max(40px, 8vmin);
+  font-size: max(20px, 4vmin);
   text-align: center;
   text-transform: uppercase;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);

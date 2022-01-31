@@ -6,11 +6,21 @@
   </mat-select>
 </mat-form-field>
 
-<mat-form-field>
+<mat-form-field *ngIf="!data.adversarial">
   <mat-select [(ngModel)]="data.height" placeholder="Numero di tentativi">
     <mat-option *ngFor="let h of heights" [value]="h">{{h}}</mat-option>
   </mat-select>
 </mat-form-field>
+
+<mat-slide-toggle [(ngModel)]="data.adversarial">Modalità antagonista</mat-slide-toggle>
+
+<p *ngIf="data.adversarial">
+  In questa modalita, il gioco dà l'impressione di scegliere una singola parola segreta, ma invece quello che fa in
+  realtà è considerare l'intero elenco di tutte le possibili parole segrete conformi alle tue ipotesi. Ogni volta che
+  indovini, il gioco sfoltisce la sua lista interna il meno possibile, tentando di prolungare intenzionalmente la
+  partita
+  il più possibile.
+</p>
 
 <div fxLayout="row" fxLayoutAlign="space-between">
   <button mat-button (click)="bottomSheetRef.dismiss()">

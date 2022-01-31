@@ -8,6 +8,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,8 +16,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { EndGameComponent } from './end-game/end-game.component';
-import { SettingsComponent } from './settings/settings.component';
 import { HelpComponent } from './help/help.component';
+import { SettingsComponent } from './settings/settings.component';
 
 
 
@@ -37,6 +38,7 @@ import { HelpComponent } from './help/help.component';
     MatSelectModule,
     MatDialogModule,
     MatBottomSheetModule,
+    MatSlideToggleModule,
     MatFormFieldModule,
     MatButtonModule,
     MatCardModule,

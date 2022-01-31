@@ -1,6 +1,6 @@
 <div *ngIf="data.win">
   <h1>Complimenti! 🏆</h1>
-  <p>Hai indovinato</p>
+  <p>Hai indovinato in <strong>{{data.trials}}</strong> tentativi!</p>
 </div>
 
 <div *ngIf="!data.win">
@@ -8,6 +8,13 @@
   <p>Non hai indovinato, la parola era <strong>{{data.word}}</strong></p>
 </div>
 
+<p>
+  <a mat-button [href]="'https://www.google.it/search?q='+data.word" target="_blank">
+    <em>
+      (cosa vuol dire {{data.word}}?)
+    </em>
+  </a>
+</p>
 <br><br>
 
 <div fxLayoutAlign="end">

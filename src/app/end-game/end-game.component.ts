@@ -9,7 +9,7 @@ import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material/bott
 export class EndGameComponent {
 
   constructor(
-    @Inject(MAT_BOTTOM_SHEET_DATA) public data: { word: string, win: boolean },
+    @Inject(MAT_BOTTOM_SHEET_DATA) public data: { word: string, win: boolean, trials: number },
     public readonly bottomSheetRef: MatBottomSheetRef<EndGameComponent>
   ) { }
 

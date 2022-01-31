@@ -10,3 +10,7 @@ h1 {
   padding: 1em;
   padding-bottom: max(.5em, env(safe-area-inset-bottom));
 }
+
+p {
+  text-align: center;
+}

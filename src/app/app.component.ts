@@ -6,6 +6,13 @@ import { Espells } from "src/espells";
 import { EndGameComponent } from './end-game/end-game.component';
 import { HelpComponent } from './help/help.component';
 import { SettingsComponent } from './settings/settings.component';
+
+const cdict = {
+  p: 'primary',
+  a: 'accent',
+  w: 'warn'
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,11 +23,14 @@ export class AppComponent implements OnInit {
   dict: 'standard' | 'extended' = 'standard';
   length = 5;
   height = 6;
+  adversarial = false;
   word?: string;
   words: string[] = [];
   cellSize = '10vw';
   fontSize = '5vw';
   borderSpacing = '1.25vw';
+
+  currentBucket: string[] = [];
 
   pause = false;
 
@@ -49,7 +59,6 @@ export class AppComponent implements OnInit {
       this.openHelp();
     }
 
-
     if (!this.spellchecker) {
       Espells.fromURL({
         aff: 'assets/index.aff',
@@ -58,10 +67,15 @@ export class AppComponent implements OnInit {
     }
     this.colors = {};
     this.pause = false;
+    this.word = undefined;
 
     this.words = (await (await fetch(`assets/standard/${this.length}.txt`)).text()).split('\n');
+    if (this.adversarial) {
+      this.currentBucket = this.words.slice();
+    } else {
+      this.word = this.words[Math.floor(Math.random() * this.words.length)];
+    }
 
-    this.word = this.words[Math.floor(Math.random() * this.words.length)];
 
 
     const size = (95 / (this.length * 9 + 1)) * 8;
@@ -70,7 +84,7 @@ export class AppComponent implements OnInit {
     this.fontSize = `min(40px, min( 7vmin, ${(size / 2).toFixed(2)}vw))`;
     this.borderSpacing = `min(10px, min( 1.75vmin, ${(size / 8).toFixed(2)}vw))`;
 
-    this.matrix = Array.from({ length: this.height }, (x, i) => Array.from({ length: this.length }, (y, j) => ({ value: '' })));
+    this.matrix = Array.from({ length: this.adversarial ? 1 : this.height }, (x, i) => Array.from({ length: this.length }, (y, j) => ({ value: '' })));
   }
 
   openHelp(): void {
@@ -113,36 +127,94 @@ export class AppComponent implements OnInit {
       }
     }
 
-    for (let j = 0; j < row.length; j++) {
-      const col = row[j];
-      const idx = this.word?.indexOf(col.value);
-      if (idx == -1) {
-        this.colors[col.value] = 'warn';
-        col.color = 'warn';
-      } else if (this.word?.charAt(j) !== col.value) {
-        this.colors[col.value] = 'accent';
-        col.color = 'accent';
-      } else {
-        this.colors[col.value] = 'primary';
-        col.color = 'primary';
+    if (this.adversarial) {
+      this.advCheck(row);
+    } else {
+      for (let j = 0; j < row.length; j++) {
+        const col = row[j];
+        const idx = this.word?.indexOf(col.value);
+        if (idx == -1) {
+          this.colors[col.value] = 'warn';
+          col.color = 'warn';
+        } else if (this.word?.charAt(j) !== col.value) {
+          this.colors[col.value] = 'accent';
+          col.color = 'accent';
+        } else {
+          this.colors[col.value] = 'primary';
+          col.color = 'primary';
+        }
       }
     }
 
+
     if (input === this.word) {
       this.pause = true;
-      this.bottomSheet.open(EndGameComponent, { data: { word: this.word, win: true } }).afterDismissed().subscribe(() => {
+      this.bottomSheet.open(EndGameComponent, { data: { word: this.word, win: true, trials: this.matrix.indexOf(row) + 1 } }).afterDismissed().subscribe(() => {
         this.ngOnInit()
       });
       return;
     }
 
-    if (this.matrix.indexOf(row) == this.height - 1) {
-      this.pause = true;
-      this.bottomSheet.open(EndGameComponent, { data: { word: this.word, win: false } }).afterDismissed().subscribe(() => {
-        this.ngOnInit()
-      });
+    if (this.matrix.indexOf(row) == this.matrix.length - 1) {
+      if (this.adversarial) {
+        this.matrix.push(Array.from({ length: this.length }, () => ({ value: '' })));
+        setTimeout(() => {
+          document.getElementById(
+            `m${this.matrix.indexOf(row) + 1}_${0}`
+          )?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 0);
+      } else {
+        this.pause = true;
+        this.bottomSheet.open(EndGameComponent, { data: { word: this.word, win: false } }).afterDismissed().subscribe(() => {
+          this.ngOnInit()
+        });
+      }
+    }
+  }
+
+  private advCheck(row: { value: string, color?: string }[]) {
+
+    let max = 0;
+    const buckets = this.currentBucket.reduce((acc: { [k: string]: string[] }, word: string) => {
+
+      const values: string[] = [];
+
+      for (let j = 0; j < row.length; j++) {
+        const col = row[j];
+        const idx = word?.indexOf(col.value);
+        if (idx == -1) {
+          values[j] = 'w';
+        } else if (word?.charAt(j) !== col.value) {
+          values[j] = 'a';
+        } else {
+          values[j] = 'p';
+        }
+      }
+
+      const bKey = values.join('');
+      acc[bKey] = acc[bKey] || [];
+
+      acc[bKey].push(word);
+
+      if (acc[bKey].length > max) {
+        max = acc[bKey].length;
+      }
+
+      return acc;
+    }, {});
+
+    const keys = Object.keys(buckets).filter(k => buckets[k].length === max);
+    const key = keys[Math.floor(Math.random() * keys.length)];
+    this.currentBucket = buckets[key];
+    if (this.currentBucket.length === 1) {
+      this.word = this.currentBucket[0];
     }
 
+    for (let j = 0; j < row.length; j++) {
+      const col = row[j];
+      this.colors[col.value] = cdict[key.charAt(j) as 'a' | 'w' | 'p'];
+      col.color = this.colors[col.value];
+    }
 
   }
 
@@ -179,12 +251,14 @@ export class AppComponent implements OnInit {
       data: {
         height: this.height,
         length: this.length,
+        adversarial: this.adversarial
       },
     }).afterDismissed().subscribe(data => {
       this.pause = false;
       if (data) {
         this.height = data.height;
         this.length = data.length;
+        this.adversarial = data.adversarial;
         this.ngOnInit();
       }
     });
