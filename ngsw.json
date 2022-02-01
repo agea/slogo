@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1643649923123,
+  "timestamp": 1643705754510,
   "index": "/slogo/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/slogo/favicon.ico",
         "/slogo/index.html",
-        "/slogo/main.9be0587c0f34cba674c5.js",
+        "/slogo/main.4782fb72f0d571801acb.js",
         "/slogo/manifest.webmanifest",
         "/slogo/polyfills.4a8eba0208ad951c67ba.js",
         "/slogo/runtime.290fbefc183367bf46d2.js",
@@ -162,8 +162,8 @@
     "/slogo/assets/standard/8.txt": "5c34bac56117936deaafdfd0708b9d894c5bad6f",
     "/slogo/assets/standard/9.txt": "fd52b3f0d0b4fd1620aba01259049781d06ce455",
     "/slogo/favicon.ico": "9b096d53e0cf050dc4f58df9ddc2783f0e0dd460",
-    "/slogo/index.html": "fab2743674962402598e7b43d02aab190e45ef8e",
-    "/slogo/main.9be0587c0f34cba674c5.js": "227c7ab077c8432b44cbef13f74896b5f8ca06f5",
+    "/slogo/index.html": "8efb6ec54c50cbea1ffeca7d6cc844dd47f5e56c",
+    "/slogo/main.4782fb72f0d571801acb.js": "202d8340556d3b2bb42050ba5e1acb98cad9bc7c",
     "/slogo/manifest.webmanifest": "c4b887f39a363005fc06eadcc87ce93ce0dc7827",
     "/slogo/polyfills.4a8eba0208ad951c67ba.js": "3daa73d3c5c236e293c89e9af335364e5b834237",
     "/slogo/roboto-v29-latin-ext_latin-300.06aac491de5c92a7da30.woff": "89eb482a276cc9cc756a4e50940611ae41c9ed2d",
