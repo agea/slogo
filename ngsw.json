@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1643705754510,
+  "timestamp": 1643706909076,
   "index": "/slogo/index.html",
   "assetGroups": [
     {
@@ -162,7 +162,7 @@
     "/slogo/assets/standard/8.txt": "5c34bac56117936deaafdfd0708b9d894c5bad6f",
     "/slogo/assets/standard/9.txt": "fd52b3f0d0b4fd1620aba01259049781d06ce455",
     "/slogo/favicon.ico": "9b096d53e0cf050dc4f58df9ddc2783f0e0dd460",
-    "/slogo/index.html": "8efb6ec54c50cbea1ffeca7d6cc844dd47f5e56c",
+    "/slogo/index.html": "c4bcde59383c57e95eaae23a3b7b09378815bf36",
     "/slogo/main.4782fb72f0d571801acb.js": "202d8340556d3b2bb42050ba5e1acb98cad9bc7c",
     "/slogo/manifest.webmanifest": "c4b887f39a363005fc06eadcc87ce93ce0dc7827",
     "/slogo/polyfills.4a8eba0208ad951c67ba.js": "3daa73d3c5c236e293c89e9af335364e5b834237",
