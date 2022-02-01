@@ -21,26 +21,32 @@
   </div>
 </div>
 <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-  <div class="letter accent-bg"> H </div>
+  <div class="letter accent-bg"> N </div>
   <div fxFlex>
-    La lettera <strong>H</strong> è nella parola ma nel posto sbagliato.
+    La lettera <strong>N</strong> è nella parola ma nel posto sbagliato.
   </div>
 </div>
 <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-  <div class="letter warn-bg"> N </div>
+  <div class="letter warn-bg"> A </div>
   <div fxFlex>
-    La lettera <strong>N</strong> non è nella parola.
+    La lettera <strong>A</strong> non è nella parola.
   </div>
 </div>
 <br>
 <br>
 <p>
-  Puoi cambiare la lunghezza delle parole e il numero di tentativi dalle impostazioni (in alto a destra), inoltre puoi
+  Puoi cambiare la lunghezza delle parole e il numero di tentativi dalle impostazioni, inoltre puoi
   mettere il gioco in modalità <em>antagonista</em>
 </p>
 
+
+
 <div fxLayoutAlign="space-between">
-  <iframe src="https://ghbtns.com/github-btn.html?user=agea&repo=slogo&type=star&count=true&size=large" frameborder="0"
-    scrolling="0" width="170" height="30" title="GitHub"></iframe>
-  <button mat-raised-button color="primary" [mat-dialog-close]>Gioca!</button>
+
+  <button mat-raised-button [mat-dialog-close]="'settings'">
+    <mat-icon>settings</mat-icon> Impostazioni
+  </button>
+  <button mat-raised-button color="primary" [mat-dialog-close]>
+    <mat-icon>apps</mat-icon> Gioca
+  </button>
 </div>

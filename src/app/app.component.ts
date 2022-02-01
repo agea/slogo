@@ -88,7 +88,12 @@ export class AppComponent implements OnInit {
   }
 
   openHelp(): void {
-    this.dialog.open(HelpComponent).afterClosed().subscribe(() => localStorage.setItem('help-closed', 'true'));
+    this.dialog.open(HelpComponent).afterClosed().subscribe(res => {
+      localStorage.setItem('help-closed', 'true');
+      if (res === 'settings') {
+        this.openSettings();
+      }
+    });
   }
 
   letter(k: string) {
