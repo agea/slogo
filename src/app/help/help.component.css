@@ -28,3 +28,14 @@ a {
   display: inline-block;
   margin: 5px;
 }
+
+
+.footer {
+  text-align: center;
+  position: relative;
+  top: 1em;
+}
+
+.footer a {
+  font-weight: normal;
+}
