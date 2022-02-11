@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, NgZone, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -47,10 +47,13 @@ export class AppComponent implements OnInit {
   letters = this.keyboard[0].concat(this.keyboard[1]).concat(this.keyboard[2]);
   spellchecker?: Espells;
 
+  speechRecognitionAvailable = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+
   constructor(
     private readonly snackBar: MatSnackBar,
     private readonly dialog: MatDialog,
-    private readonly bottomSheet: MatBottomSheet
+    private readonly bottomSheet: MatBottomSheet,
+    private readonly zone: NgZone
   ) { }
 
   async ngOnInit(): Promise<void> {
@@ -268,6 +271,44 @@ export class AppComponent implements OnInit {
         this.ngOnInit();
       }
     });
+  }
+
+  speechRecognition() {
+
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+
+    const recognition = new SpeechRecognition();
+    recognition.continuous = false;
+    recognition.lang = 'it-IT';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+    recognition.start();
+
+    recognition.onresult = (event: any) => {
+      this.zone.run(() => {
+        var word = event.results[0][0].transcript;
+        console.log('Result received: ' + word + '.');
+        console.log('Confidence: ' + event.results[0][0].confidence);
+        if (word.length === this.length) {
+          for (let i = 0; i < word.length; i++) {
+            this.letter(word.charAt(i));
+          }
+        }
+      })
+
+    }
+
+    recognition.onspeechend = () => {
+      recognition.stop();
+    }
+
+    recognition.onnomatch = (event: any) => {
+      console.log(`I didn't recognize that word.`);
+    }
+    recognition.onerror = (event: any) => {
+      console.log('Error occurred in recognition: ' + event.error);
+    }
+
   }
 
 }
