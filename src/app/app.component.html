@@ -37,7 +37,8 @@
       <div fxFlex="1 0 20px"></div>
     </div>
     <div fxLayout="row">
-      <button fxFlex fxFlex="1 0 30px" [disabled]="!speechRecognitionAvailable" mat-raised-button
+      <div fxFlex="1 0 30px"></div>
+      <button fxFlex *ngIf="false" fxFlex="1 0 30px" [disabled]="!speechRecognitionAvailable" mat-raised-button
         (click)="speechRecognition()">
         <mat-icon>mic</mat-icon>
       </button>
