@@ -253,6 +253,7 @@ export class AppComponent implements OnInit {
   openSettings() {
     this.pause = true;
     this.bottomSheet.open(SettingsComponent, {
+      disableClose: true,
       data: {
         height: this.height,
         length: this.length,

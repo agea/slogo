@@ -47,6 +47,10 @@ mat-form-field {
   border-radius: 3px;
 }
 
+.word-row td.full {
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.25);
+}
+
 .matrix {
   margin: auto;
   border-spacing: 1vw;
